@@ -1,6 +1,6 @@
 	@font-face {
     font-family: 'Pacifico'; /*a name to be used later*/
-    src: url('http://vild.org/dist/fonts/Pacifico.ttf'); /*URL to font*/
+    src: url('../fonts/Pacifico.ttf'); /*URL to font*/
 	}
 	
 	body {
