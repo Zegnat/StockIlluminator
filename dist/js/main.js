@@ -1680,7 +1680,7 @@
     });
 	
 	$('#ProfileModal').on('hidden.bs.modal', function (e) {
-		history.replaceState(null, null, '/labs/stocks/');
+		history.replaceState(null, null, location.pathname);
 	})
 
 	$("#ShowOwn").click(function(){
