@@ -1,0 +1,149 @@
+	@font-face {
+    font-family: 'Pacifico'; /*a name to be used later*/
+    src: url('http://vild.org/dist/fonts/Pacifico.ttf'); /*URL to font*/
+	}
+	
+	body {
+    background: #dddff6;
+    }
+	
+	.modal-content {
+	background: #dddff6; /* Old browsers */
+	background: -moz-linear-gradient(-45deg, #dddff6 0%, #a9d2f3 10%, #90bae4 25%, #90bcea 37%, #dddff6 73%, #dddff6 78%, #90bff0 98%, #dddff6 100%, #dddff6 100%, #bdf3fd 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#dddff6), color-stop(10%,#a9d2f3), color-stop(25%,#90bae4), color-stop(37%,#90bcea), color-stop(73%,#dddff6), color-stop(78%,#dddff6), color-stop(98%,#90bff0), color-stop(100%,#dddff6), color-stop(100%,#dddff6), color-stop(100%,#bdf3fd)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg, #dddff6 0%,#a9d2f3 10%,#90bae4 25%,#90bcea 37%,#dddff6 73%,#dddff6 78%,#90bff0 98%,#dddff6 100%,#dddff6 100%,#bdf3fd 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg, #dddff6 0%,#a9d2f3 10%,#90bae4 25%,#90bcea 37%,#dddff6 73%,#dddff6 78%,#90bff0 98%,#dddff6 100%,#dddff6 100%,#bdf3fd 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg, #dddff6 0%,#a9d2f3 10%,#90bae4 25%,#90bcea 37%,#dddff6 73%,#dddff6 78%,#90bff0 98%,#dddff6 100%,#dddff6 100%,#bdf3fd 100%); /* IE10+ */
+	background: linear-gradient(135deg, #dddff6 0%,#a9d2f3 10%,#90bae4 25%,#90bcea 37%,#dddff6 73%,#dddff6 78%,#90bff0 98%,#dddff6 100%,#dddff6 100%,#bdf3fd 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddff6', endColorstr='#bdf3fd',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	}
+	
+    h1,h2,h3,h4,h5,h6 {
+    font-weight: 800 !important;
+    }
+
+    #pagehead {
+    background: transparent;
+    margin: 0;
+    }
+
+    #pagehead h1,#pagehead h2 {
+    display: inline;
+    background: #fff;
+	box-shadow: 0px 0px 0px 5px white;
+    color: #2f2f2f;
+    padding: 4px;
+    margin-bottom: 6px;
+    line-height: 121%;
+    }
+	
+	.modal-body h2, .modal-body h3 {
+	display: inline;
+	line-height: 160%;
+	color: #222;
+    text-shadow: -1px -1px 1px #EDEDED, 1px 1px 1px #000;
+	font-weight: 500 !important;
+	}
+	
+    #pagehead .PlayerCash {
+    color: #65956E;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    word-wrap: break-word;
+    }
+
+    #pagehead .CashInMarket {
+    color: #D4A8FF;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    word-wrap: break-word;
+	line-height: 1.67;
+    }
+	
+	#StocksBoard {
+	background: #FFFFFF;
+	}
+
+	#StocksBoard tr {
+	-webkit-transition: all 3s ease;
+	-moz-transition: all 3s ease;
+	-ms-transition: all 3s ease;
+	-o-transition: all 3s ease;
+	transition: all 3s ease;
+	}
+
+	#StocksBoard.ShowOwn tr {
+	display: none;
+	}
+
+	#StocksBoard.ShowOwn tr.owned{
+	display: table-row !important;
+	}
+	
+    #StocksBoard tr th:nth-child(1),#StocksBoard tr td:nth-child(2) {
+    width: 40%;
+    text-transform: capitalize;
+    }
+
+    #StocksBoard tr td:nth-child(4) {
+    color: #C78FFF;
+    }
+
+    #StocksBoard tr td:nth-child(5) {
+    font-size: .75em;
+    }
+
+    #StocksBoard tr th:nth-child(6),#StocksBoard tr td:nth-child(6),#StocksBoard tr th:nth-child(7),#StocksBoard tr td:nth-child(7) {
+    width: 1em;
+    }
+
+    #StocksBoard input {
+    width: 100%;
+    text-align: center;
+    }
+
+    #SettingsBoard input {
+    background: #f2dede;
+    }
+	
+	#PlayerName {
+	background: none;
+	border: none;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 800 !important;
+	}
+	
+	.Pacifico {
+	font-family: "Pacifico",Helvetica,Arial,sans-serif;
+	}
+	
+    .jumbotron {
+    background: white;
+    }
+	
+	.tri-up {
+	width: 0; 
+	height: 0; 
+	border-left: 120px solid transparent;
+	border-right: 120px solid transparent;
+	border-bottom: 180px solid #DDDFF6;
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	opacity: 0.5;
+	}
+	
+	.navbar-inverse {
+	background-color: #131313;
+	}
+	
+    @media(max-width : 320px){
+    .jumbotron {
+    padding: 10px;
+	width 100%;
+    }
+	#StocksBoard {
+	width 100%;
+	}
+	#StocksBoard tr td:nth-child(2), #StocksBoard tr th:nth-child(2) {
+	display: none;
+    }
+	}
