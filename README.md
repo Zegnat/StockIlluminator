@@ -39,3 +39,4 @@ Stock Illuminator uses some externally maintained CSS, JavaScript, and fonts.
 Their respective licenses can be found in the [LICENSES](LICENSES) folder:
 
 * [Bootstrap](http://getbootstrap.com), [license](LICENSES/Bootstrap-LICENSE)
+* [jQuery](https://jquery.com), [license](LICENSES/jQuery-LICENSE)
