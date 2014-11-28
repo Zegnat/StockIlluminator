@@ -1,175 +1,134 @@
 <!DOCTYPE html>
-
 <html>
-<head>
-
+  <head>
     <script src="dist/js/jquery-1.11.1.min.js"></script>
-    <link href="dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="dist/css/style.css" rel="stylesheet" type="text/css">
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="dist/css/style.css" rel="stylesheet">
     <script src="dist/js/bootstrap.min.js"></script>
     <script src="dist/js/jquery.cookie-1.4.1.js"></script>
     <meta charset="utf-8">
     <meta content="initial-scale=1.0,width=device-width" name="viewport">
-	<link type="text/plain" rel="author" href="http://vild.org/humans.txt" />
-
+    <link type="text/plain" rel="author" href="http://vild.org/humans.txt">
     <title>Stock Illuminator</title>
-
-</head>
-
-<body>
+  </head>
+  <body>
     <div class="jumbotron" id="pagehead">
-        <div class="row">
-            <div class="col-md-7">
-                <h1>&nbsp;STOCK&nbsp;<br>
-                &nbsp;ILLUMINATOR&nbsp;</h1><br>
-
-                <h2><small><em>Lighting <strong>your</strong> way to world
-                domination</em></small></h2>
-            </div>
-
-            <div class="col-md-5">
-				<h3>
-				<input id="PlayerName" type="text" value="" required placeholder="Choose A Name" />
-				<br />
-				<span id="OwnedItemTag">Proud Condo Owner</span>
-				</h3>
-				<br>
-                <h1>&nbsp;<span class="PlayerCash tooltipTog" data-toggle=
-                "tooltip" title=
-                "Out of Market Cash (Banked)">$<span id="PlayerCash">Loading..</span></span>&nbsp;<br>
-                &nbsp;<span class="CashInMarket tooltipTog" data-toggle=
-                "tooltip" title="In Market Cash">$<span id="CashInMarket">Loading..</span></span>&nbsp;</h1>
-            </div>
+      <div class="row">
+        <div class="col-md-7">
+          <h1>&nbsp;STOCK&nbsp;<br>
+            &nbsp;ILLUMINATOR&nbsp;</h1><br>
+          <h2><small><em>Lighting <strong>your</strong> way to world domination</em></small></h2>
         </div>
+        <div class="col-md-5">
+          <h3>
+            <input id="PlayerName" type="text" value="" required placeholder="Choose A Name">
+            <br>
+            <span id="OwnedItemTag">Proud Condo Owner</span>
+          </h3>
+          <br>
+          <h1>&nbsp;<span class="PlayerCash tooltipTog" data-toggle="tooltip" title="Out of Market Cash (Banked)">$<span id="PlayerCash">Loading..</span></span>
+            &nbsp;<br>
+            &nbsp;<span class="CashInMarket tooltipTog" data-toggle="tooltip" title="In Market Cash">$<span id="CashInMarket">Loading..</span></span>&nbsp;
+          </h1>
+        </div>
+      </div>
     </div>
-
     <div class="row">
-        <div class="col-md-2"></div>
-
-        <div class="col-md-8">
-            <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="index.html#stocks"><span class="glyphicon glyphicon-stats"></span> STOCKS</a></li>
-                <li><a data-toggle="tab" href="index.html#store"><span class="glyphicon glyphicon-usd"></span> STORE</a></li>
-                <li><a data-toggle="tab" href="index.html#settings"><span class=" glyphicon glyphicon-list-alt"></span></a></li>
-                <li id="GameSave" style="float: right;" data-toggle="tooltip" title="Save Banked Amount To Memory" class="tooltipTog"><a href="javascript:void(0)">SAVE GAME</a></li>
-                <li id="BizCard" style="float: right;" data-toggle="tooltip" title="View / Share Business Card" class="tooltipTog"><a href="javascript:void(0)">SHARE CARD</a></li>
-				</ul>
-
-            <div class="jumbotron tab-content">
-                <div class="tab-pane active" id="stocks">
-                    <h2>STOCKS <small>(Refresh in: 
-					<em class="GameSpeedTag">X</em> sec) 
-					<button id="ShowOwn" type="button" class="btn btn-xs">Show Owned Only</button>
-					<button id="SavedTag" type="button" disabled="disabled" class="btn btn-xs btn-success invisible">Game Saved</button>
-					</small>
-					</h2>
-                    <table class="table table-condensed" id="StocksBoard">
-                        <tr class="owned">
-                            <th colspan="2">CORP</th>
-
-                            <th>PRICE</th>
-
-                            <th></th>
-
-                            <th>DIFF</th>
-
-                            <th colspan="2"><input class="tooltipTog form-control"
-                            data-toggle="tooltip" id="TradeAmount" step="1" min="1" placeholder="Amount"
-                            title="Sell / Buy Amount" type="number" value="10"></th>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="tab-pane" id="store">
-                    <h2>STORE</h2>
-
-                    <table class="table table-condensed" id="StoreBoard">
-                        <tr>
-                            <th>ITEM</th>
-
-                            <th>PRICE</th>
-
-                            <th></th>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="tab-pane" id="settings">
-                    <h2>SETTINGS</h2>
-
-                    <p>Goofing around with these might break your game, be
-                    careful. These changes revert after session.</p>
-
-                    <table class="table" id="SettingsBoard">
-                        <tr>
-                            <th>Market Size</th>
-
-                            <td><input id="MarketSize"></td>
-                        </tr>
-
-                        <tr>
-                            <td colspan="2"><em>(Too many and things might get
-                            a bit laggy)</em></td>
-                        </tr>
-
-                        <tr>
-                            <th>Market Volatility</th>
-
-                            <td><input id="CoinFlips"></td>
-                        </tr>
-
-                        <tr>
-                            <td colspan="2"><em>(Amount of point movements for
-                            each stock per refresh.)</em></td>
-                        </tr>
-
-                        <tr>
-                            <th>Refresh Time</th>
-
-                            <td><input id="GameSpeed"></td>
-                        </tr>
-
-                        <tr>
-                            <td colspan="2"><em>(In seconds)</em></td>
-                        </tr>
-                        <tr>
-                            <th>Number Animation Duration</th>
-
-                            <td><input id="numAnimTime"></td>
-                        </tr>
-
-                        <tr>
-                            <td colspan="2"><em>(In seconds, default is 0.25)</em></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-			
-		<div class="text-center">
-		<div><b>Created by Vild.org</b></div>
-		</div>
-		
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="index.html#stocks"><span class="glyphicon glyphicon-stats"></span> STOCKS</a></li>
+          <li><a data-toggle="tab" href="index.html#store"><span class="glyphicon glyphicon-usd"></span> STORE</a></li>
+          <li><a data-toggle="tab" href="index.html#settings"><span class=" glyphicon glyphicon-list-alt"></span></a></li>
+          <li id="GameSave" style="float: right;" data-toggle="tooltip" title="Save Banked Amount To Memory" class="tooltipTog"><a href="javascript:void(0)">SAVE GAME</a></li>
+          <li id="BizCard" style="float: right;" data-toggle="tooltip" title="View / Share Business Card" class="tooltipTog"><a href="javascript:void(0)">SHARE CARD</a></li>
+        </ul>
+        <div class="jumbotron tab-content">
+          <div class="tab-pane active" id="stocks">
+            <h2>STOCKS
+              <small>
+                (Refresh in: <em class="GameSpeedTag">X</em> sec)
+                <button id="ShowOwn" type="button" class="btn btn-xs">Show Owned Only</button>
+                <button id="SavedTag" type="button" disabled="disabled" class="btn btn-xs btn-success invisible">Game Saved</button>
+              </small>
+            </h2>
+            <table class="table table-condensed" id="StocksBoard">
+              <tr class="owned">
+                <th colspan="2">CORP</th>
+                <th>PRICE</th>
+                <th></th>
+                <th>DIFF</th>
+                <th colspan="2">
+                  <input class="tooltipTog form-control" data-toggle="tooltip" id="TradeAmount" step="1" min="1" placeholder="Amount" title="Sell / Buy Amount" type="number" value="10">
+                </th>
+              </tr>
+            </table>
+          </div>
+          <div class="tab-pane" id="store">
+            <h2>STORE</h2>
+            <table class="table table-condensed" id="StoreBoard">
+              <tr>
+                <th>ITEM</th>
+                <th>PRICE</th>
+                <th></th>
+              </tr>
+            </table>
+          </div>
+          <div class="tab-pane" id="settings">
+            <h2>SETTINGS</h2>
+            <p>Goofing around with these might break your game, be careful. These changes revert after session.</p>
+            <table class="table" id="SettingsBoard">
+              <tr>
+                <th>Market Size</th>
+                <td><input id="MarketSize"></td>
+              </tr>
+              <tr>
+                <td colspan="2"><em>(Too many and things might get a bit laggy)</em></td>
+              </tr>
+              <tr>
+                <th>Market Volatility</th>
+                <td><input id="CoinFlips"></td>
+              </tr>
+              <tr>
+                <td colspan="2"><em>(Amount of point movements for each stock per refresh.)</em></td>
+              </tr>
+              <tr>
+                <th>Refresh Time</th>
+                <td><input id="GameSpeed"></td>
+              </tr>
+              <tr>
+                <td colspan="2"><em>(In seconds)</em></td>
+              </tr>
+              <tr>
+                <th>Number Animation Duration</th>
+                <td><input id="numAnimTime"></td>
+              </tr>
+              <tr>
+                <td colspan="2"><em>(In seconds, default is 0.25)</em></td>
+              </tr>
+            </table>
+          </div>
         </div>
-
-    </div><!-- /row -->
-	
-	<!-- modal for profile viewing -->
-	<div class="modal fade" id="ProfileModal" tabindex="-1" role="dialog" aria-labelledby="ProfileModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-	<div class="modal-content">
-	<div class="tri-up"></div>
-	  <div class="modal-body">
-		<p></p>
-	  </div>
-	  <div class="modal-footer">
-		<div class="Pacifico" style="float: left; font-size: 1.5em;">Valmont State</div>
-		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	  </div>
-	</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
-
+        <div class="text-center">
+          <div><b>Created by Vild.org</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="ProfileModal" tabindex="-1" role="dialog" aria-labelledby="ProfileModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="tri-up"></div>
+          <div class="modal-body">
+            <p></p>
+          </div>
+          <div class="modal-footer">
+            <div class="Pacifico" style="float: left; font-size: 1.5em;">Valmont State</div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="dist/js/countUp.js"></script>
     <script src="dist/js/main.js"></script>
-    </body>
+  </body>
 </html>
