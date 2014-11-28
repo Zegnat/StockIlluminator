@@ -32,3 +32,10 @@ by the original author:
 > […] you can just steal the code and hack a better version yourself :)
 
 [11837]: http://sublevel.net/re/11837/
+
+### External resources
+
+Stock Illuminator uses some externally maintained CSS, JavaScript, and fonts.
+Their respective licenses can be found in the [LICENSES](LICENSES) folder:
+
+* [Bootstrap](http://getbootstrap.com), [license](LICENSES/Bootstrap-LICENSE)
