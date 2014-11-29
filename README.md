@@ -42,3 +42,4 @@ Their respective licenses can be found in the [LICENSES](LICENSES) folder:
 * [jQuery](https://jquery.com), [license](LICENSES/jQuery-LICENSE)
 * [jquery.cookie](https://github.com/carhartl/jquery-cookie), [license](LICENSES/jquery.cookie-LICENSE)
 * [Pacifico](http://www.google.com/fonts/specimen/Pacifico), [license](LICENSES/Pacifico-LICENSE)
+* [countUp.js](http://inorganik.github.io/countUp.js/), [license](LICENSES/countUp.js-LICENSE)
